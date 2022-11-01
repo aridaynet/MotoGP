@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./pilotos/pilotos.module').then( m => m.PilotosPageModule)
   },
   {
-    path: 'updatepilotos',
+    path: 'updatepilotos/:id',
     loadChildren: () => import('./updatepilotos/updatepilotos.module').then( m => m.UpdatepilotosPageModule)
   },
   {
