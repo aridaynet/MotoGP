@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Crear Pilotos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-context></ion-context>
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="nombre" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input formControlName="apellido" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Categoria</ion-label>
+        <ion-input formControlName="categoria" type="text" required></ion-input>
+      </ion-item>
+       <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" expand="block">Añadir</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+  <ion-button expand="block" (click)="gotoTab3()">Volver</ion-button>
+</ion-content>

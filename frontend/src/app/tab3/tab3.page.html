@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pilotos
+    </ion-title>
+    
+  </ion-toolbar>
+  <ion-button expand="block" (click)="gotoMotoGP()">Añadir piloto</ion-button>
+
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let m of motogp">
+      <ion-label>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Nombre: {{m.nombre}}</ion-card-title>
+            <ion-card-subtitle>Apellido: {{m.apellido}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>Categoria: {{m.categoria}}</ion-card-content>
+          <div class="item-note" item-end>
+            <button ion-button  clear (click)="removeUser(m)">
+              <ion-icon color="danger" name="trash" style="zoom:2"></ion-icon>
+            </button>
+            <!--<button ion-button expand="block" (click)="gotoUpdate()">-->
+              <button ion-button clear [routerLink]="['/updatepilotos']">
+              <ion-icon color="success" name="create" style="zoom:2"></ion-icon>
+            </button>
+          </div>
+        </ion-card>
+      </ion-label>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>
+  <!--<ion-fab expand="block" (click)="gotoMotoGP()" vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>-->
+<ion-footer>
+  
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <ion-label>Antonio Aridany González Negrín</ion-label>
+  </ion-item>
+</ion-footer>
