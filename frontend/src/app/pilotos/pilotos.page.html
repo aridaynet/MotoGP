@@ -3,7 +3,7 @@
     <ion-title>Crear Pilotos</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-context></ion-context>
+
 <ion-content [fullscreen]="true">
   <ion-list lines="full">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
@@ -20,11 +20,36 @@
         <ion-input formControlName="categoria" type="text" required></ion-input>
       </ion-item>
        <ion-row>
-        <ion-col>
-          <ion-button type="submit" color="danger" expand="block">Añadir</ion-button>
-        </ion-col>
+        
       </ion-row>
     </form>
   </ion-list>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
+        <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
+          (click)="takePhoto()"></ion-img>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="primary" fill="outline" (click)="takePhoto()">
+          <ion-icon slot="start" name="camera-outline"></ion-icon>
+          Toma una foto
+        </ion-button>
+        <ion-button color="primary" fill="outline" (click)="pickImage()">
+          <ion-icon slot="start" name="image-outline"></ion-icon>
+          Elegir una imagen
+        </ion-button>
+        <ion-button color="danger" fill="outline" (click)="discardImage()">
+          <ion-icon slot="start" name="aperture"></ion-icon>
+          Descartar imagen
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-col>
+    <ion-button type="submit" color="danger" expand="block">Añadir</ion-button>
+  </ion-col>
   <ion-button expand="block" (click)="gotoTab3()">Volver</ion-button>
+
 </ion-content>
