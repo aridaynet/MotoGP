@@ -30,6 +30,7 @@ export class UpdatepilotosPage implements OnInit {
       categoria: [''],
     })
   }
+  
 
   fetchUser(id) {
     this.motogpService.getUser(id).subscribe((data) => {
@@ -48,7 +49,9 @@ export class UpdatepilotosPage implements OnInit {
       this.motogpService.updateUser(this.id, this.updateUserFg.value)
         .subscribe(() => {
           this.updateUserFg.reset();
-          this.router.navigateByUrl("/tabs/tab3");
+          //this.router.navigateByUrl("/tabs/tab3");
+          this.router.navigateByUrl('/', { skipLocationChange: true}).then(() =>
+          this.router.navigate(["/tabs/tab3"]));
         })
     }
   }

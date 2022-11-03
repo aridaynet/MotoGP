@@ -36,7 +36,9 @@ export class PilotosPage implements OnInit {
         .subscribe((response) => {
           this.zone.run(() => {
             this.userForm.reset();
-            this.router.navigate(['/tabs/tab3']);
+            //this.router.navigate(['/tabs/tab3']);
+            this.router.navigateByUrl('/', { skipLocationChange: true}).then(() =>
+            this.router.navigate(["/tabs/tab3"]));
           })
         });
     }

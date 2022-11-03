@@ -2,37 +2,37 @@ const db = require("../models");
 const MotoGP = db.motogp;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Tutorial
+// Create and Save a new MotoGP
 exports.create = (req, res) => {
   
 };
 
-// Retrieve all Tutorials from the database.
+// Retrieve all MotoGPs from the database.
 exports.findAll = (req, res) => {
   
 };
 
-// Find a single Tutorial with an id
+// Find a single MotoGP with an id
 exports.findOne = (req, res) => {
   
 };
 
-// Update a Tutorial by the id in the request
+// Update a MotoGP by the id in the request
 exports.update = (req, res) => {
   
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a MotoGP with the specified id in the request
 //exports.delete = (req, res) => {
   
 //};
 
-// Delete all Tutorials from the database.
+// Delete all MotoGPs from the database.
 exports.deleteAll = (req, res) => {
   
 };
 
-// Find all published Tutorials
+// Find all published MotoGPs
 exports.findAllPublished = (req, res) => {
   
 };
@@ -76,17 +76,17 @@ exports.delete = (req, res) => {
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Tutorial was deleted successfully!"
+          message: "MotoGP was deleted successfully!"
         });
       } else {
         res.send({
-          message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+          message: `Cannot delete MotoGP with id=${id}. Maybe MotoGP was not found!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete Tutorial with id=" + id
+        message: "Could not delete MotoGP with id=" + id
       });
     });
 };
@@ -99,11 +99,11 @@ exports.update = (req, res) => {
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "Tutorial was updated successfully."
+            message: "MotoGP was updated successfully."
           });
         } else {
           res.send({
-            message: `Cannot update MotoGP with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+            message: `Cannot update MotoGP with id=${id}. Maybe MotoGP was not found or req.body is empty!`
           });
         }
       })
