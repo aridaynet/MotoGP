@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'deletepilotos',
     loadChildren: () => import('./deletepilotos/deletepilotos.module').then( m => m.DeletepilotosPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({

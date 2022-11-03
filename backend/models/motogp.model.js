@@ -8,6 +8,9 @@ module.exports = (sequelize, Sequelize) => {
       },
       categoria: {
         type: Sequelize.STRING
+      },
+      filename: {
+        type: Sequelize.STRING
       }
     });
   

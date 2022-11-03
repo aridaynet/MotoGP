@@ -1,3 +1,4 @@
+const { USER } = require("../config/db.config");
 const db = require("../models");
 const MotoGP = db.motogp;
 const Op = db.Sequelize.Op;
@@ -52,6 +53,7 @@ console.log(req.apellido)
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         categoria: req.body.categoria,
+        filename: req.file.filename ? req.file.filename : ""
     };
 
     // Guardar la categoria en la base de datos
@@ -123,5 +125,20 @@ exports.findAll = (req, res) => {
                 message:
                     err.message || "Some error ocurrend while retrieving MotoGP."
             });
+        });
+
+        user.password = bcrypt.hashSync(req.body.password);
+        User.create(user)
+        .then(data => {
+          const token = utils.generateToken(data);
+          const userObj = utils.getCleanUser(data);
+
+          return res.json ({ user: userObk, access_token: token});
+        })
+        .catch(err => {
+          res.status(500).send({
+            message:
+            err.message || "Some error ocurrend while creating the User."
+          });
         });
 };

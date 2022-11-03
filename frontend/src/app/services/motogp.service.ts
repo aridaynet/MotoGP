@@ -7,6 +7,8 @@ export class User {
   nombre: string;
   apellido: string;
   categoria: string;
+  username: string;
+  password: string;
 
 }
 @Injectable({
@@ -17,8 +19,10 @@ export class MotogpService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+  //AUTH_SERVER_ADDRESS: string = 'http://localhost:4000';
 
-  constructor (private httpClient: HttpClient) { }
+
+  constructor (private httpClient: HttpClient) { } //private storage: Storage
   
   createUser(user: User): Observable<any> {
     return this.httpClient.post<User>(this.endpoint, JSON.stringify(user), this.httpOptions)
@@ -69,4 +73,14 @@ getUsers(): Observable<User[]> {
       catchError(this.handleError<User[]>('Get user', []))
     );
 }
+/*private getOptions(token) {
+  let bearerAccess = 'Bearer ' + token;
+
+  let options = {
+    headers: {
+      'authorization': bearerAccess,
+    }
+  };
+  return options;
+}*/
 }
