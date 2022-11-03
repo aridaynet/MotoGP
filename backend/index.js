@@ -10,6 +10,7 @@ var path = require('path');
 
 // public directory
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(cors(corsOptions));
 
 app.use(express.json());
