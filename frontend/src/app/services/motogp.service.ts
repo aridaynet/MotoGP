@@ -42,6 +42,16 @@ export class MotogpService {
       );
   }
 
+  createMotogp(motogp, blob){
+    let formData = new FormData();
+    formData.append("nombre", motogp.nombre);
+    formData.append("apellido", motogp.apellido);
+    formData.append("categoria", motogp.categoria);
+    formData.append("file", blob);
+
+    return this.httpClient.post(this.endpoint, formData);
+  }
+
   deleteUser(id): Observable<User[]> {
     return this.httpClient.delete<User[]>(this.endpoint + '/' + id, this.httpOptions)
       .pipe(
