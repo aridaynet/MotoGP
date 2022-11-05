@@ -1,4 +1,4 @@
-const { USER } = require("../config/db.config");
+//const { USER } = require("../config/db.config");
 const db = require("../models");
 const MotoGP = db.motogp;
 const Op = db.Sequelize.Op;
@@ -127,7 +127,7 @@ exports.findAll = (req, res) => {
       });
     });
 
-  user.password = bcrypt.hashSync(req.body.password);
+  /*user.password = bcrypt.hashSync(req.body.password);
   User.create(user)
     .then(data => {
       const token = utils.generateToken(data);
@@ -140,5 +140,5 @@ exports.findAll = (req, res) => {
         message:
           err.message || "Some error ocurrend while creating the User."
       });
-    });
+    });*/
 };

@@ -22,31 +22,32 @@
        <ion-row>
         
       </ion-row>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="6">
+            <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
+            <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
+              (click)="takePhoto()"></ion-img>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button color="primary" fill="outline" (click)="takePhoto()">
+              <ion-icon slot="start" name="camera-outline"></ion-icon>
+              Toma una foto
+            </ion-button>
+            <ion-button color="primary" fill="outline" (click)="pickImage()">
+              <ion-icon slot="start" name="image-outline"></ion-icon>
+              Elegir una imagen
+            </ion-button>
+            <ion-button color="danger" fill="outline" (click)="discardImage()">
+              <ion-icon slot="start" name="aperture"></ion-icon>
+              Descartar imagen
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </form>
   </ion-list>
-  <ion-grid>
-    <ion-row class="ion-align-items-center">
-      <ion-col size="6">
-        <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
-        <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
-          (click)="takePhoto()"></ion-img>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button color="primary" fill="outline" (click)="takePhoto()">
-          <ion-icon slot="start" name="camera-outline"></ion-icon>
-          Toma una foto
-        </ion-button>
-        <ion-button color="primary" fill="outline" (click)="pickImage()">
-          <ion-icon slot="start" name="image-outline"></ion-icon>
-          Elegir una imagen
-        </ion-button>
-        <ion-button color="danger" fill="outline" (click)="discardImage()">
-          <ion-icon slot="start" name="aperture"></ion-icon>
-          Descartar imagen
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  
   <ion-col>
     <ion-button type="submit" color="danger" expand="block">Añadir</ion-button>
   </ion-col>

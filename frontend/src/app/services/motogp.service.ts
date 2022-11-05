@@ -47,7 +47,7 @@ export class MotogpService {
     formData.append("nombre", motogp.nombre);
     formData.append("apellido", motogp.apellido);
     formData.append("categoria", motogp.categoria);
-    formData.append("file", blob);
+    formData.append("filename", blob);
 
     return this.httpClient.post(this.endpoint, formData);
   }
