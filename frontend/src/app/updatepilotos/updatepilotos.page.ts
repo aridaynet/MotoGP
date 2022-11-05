@@ -9,6 +9,7 @@ import { MotogpService } from '../services/motogp.service';
   styleUrls: ['./updatepilotos.page.scss'],
 })
 export class UpdatepilotosPage implements OnInit {
+  motogp: any = [];
 
   updateUserFg: FormGroup;
   id: any;
@@ -22,7 +23,10 @@ export class UpdatepilotosPage implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
-  ionViewWillEnter() {
+  ionViewDidEnter() {
+    this.motogpService.getUsers().subscribe((response) => {
+      this.motogp = response;
+    })
   }
 
   ngOnInit() {

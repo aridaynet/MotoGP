@@ -62,8 +62,8 @@ export class Tab3Page implements OnInit {
     this.motogpService.getUser(id).subscribe((data) => {
       this.updateUserFg.setValue({
         name: data['name'],
-        email: data['email'],
-        username: data['username']
+        apellido: data['apellido'],
+        categoria: data['categoria']
       });
     });
   }
