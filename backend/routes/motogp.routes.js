@@ -2,6 +2,7 @@ module.exports = app => {
     const motogp = require("../controllers/motogp.controller.js");
     var router = require("express").Router();
     var upload = require('../multer/upload');
+    const auth = require("../controllers/auth.js");
 
     // Create a new MotoGP
     router.post("/", upload.single('file'), motogp.create);
@@ -16,7 +17,7 @@ module.exports = app => {
     // Delete a Motogp with id
     router.delete("/:id", motogp.delete);
     // Sign in
-    //router.post("/signin", motogp.signin);
+    //router.post("/signin", auth.signin);
 
     app.use('/api/motogp', router);
 };

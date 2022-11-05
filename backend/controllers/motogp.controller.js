@@ -127,8 +127,8 @@ exports.findAll = (req, res) => {
       });
     });
 
-  //user.password = bcrypt.hashSync(req.body.password);
-  /*User.create(user)
+  user.password = bcrypt.hashSync(req.body.password);
+  User.create(user)
     .then(data => {
       const token = utils.generateToken(data);
       const userObj = utils.getCleanUser(data);
@@ -140,5 +140,5 @@ exports.findAll = (req, res) => {
         message:
           err.message || "Some error ocurrend while creating the User."
       });
-    });*/
+    });
 };

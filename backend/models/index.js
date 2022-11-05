@@ -21,5 +21,6 @@ const sequelize = new Sequelize(dbConfig.DB,
   db.sequelize = sequelize;
 
   db.motogp = require("./motogp.model.js")(sequelize, Sequelize);
+  db.motogp = require("./user.model.js")(sequelize, Sequelize);
 
   module.exports = db;

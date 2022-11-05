@@ -83,7 +83,7 @@ getUsers(): Observable<User[]> {
       catchError(this.handleError<User[]>('Get user', []))
     );
 }
-/*private getOptions(token) {
+private getOptions(token) {
   let bearerAccess = 'Bearer ' + token;
 
   let options = {
@@ -92,5 +92,5 @@ getUsers(): Observable<User[]> {
     }
   };
   return options;
-}*/
+}
 }

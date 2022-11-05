@@ -22,6 +22,9 @@ export class UpdatepilotosPage implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
+  ionViewWillEnter() {
+  }
+
   ngOnInit() {
     this.fetchUser(this.id);
     this.updateUserFg = this.formBuilder.group({
