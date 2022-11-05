@@ -15,7 +15,17 @@ exports.findAll = (req, res) => {
 
 // Find a single MotoGP with an id
 exports.findOne = (req, res) => {
+  const id = req.params.id;
 
+  MotoGP.findByPk(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving MotoGP with id=" + id
+      });
+    });
 };
 
 // Update a MotoGP by the id in the request
