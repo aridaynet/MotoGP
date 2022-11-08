@@ -38,7 +38,7 @@ app.use(function (req, res, next) {
     console.log('Server started on: ' + port);
   });
 
-/*app.use(function (req, res, next) {
+app.use(function (req, res, next) {
   // check header or url parameters or post parameters for token
   var token = req.headers['authorization'];
   if (!token) return next(); //if no token, continue
@@ -71,7 +71,7 @@ app.use(function (req, res, next) {
   });
 });
 
-require("./routes/user.routes")(app);
+/*require("./routes/user.routes")(app);
 require("./routes/motorbike.routes")(app);
 
 app.listen(port, () => {

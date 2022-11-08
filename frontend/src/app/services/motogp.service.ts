@@ -19,7 +19,7 @@ export class MotogpService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  //AUTH_SERVER_ADDRESS: string = 'http://localhost:4000';
+  AUTH_SERVER_ADDRESS: string = 'http://localhost:4000';
 
 
   constructor (private httpClient: HttpClient) { } //private storage: Storage
